@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <title>Edit blog post</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+  <h1>Edit blog post</h1>
+  <form action="#"
+        th:action="@{/post/update/{id}(id=${editpostdto.post.id})}"
+        th:object="${editpostdto.post}"
+        th:method="put">
+
+    <p>Title: <input type="text" th:field="*{title}" /></p>
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+      <p>Content: <input type="text" th:field="*{content}" /></p>
+      <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span>
+
+    <span><u>Categories</u></span>
+    <br/>
+    <ul>
+
+      <li th:each="cat, iter : ${editpostdto.currentCategories}">
+
+        <input type="checkbox"  th:value="${cat.key.id}" th:name="selectedIds"
+               th:checked="${cat.value == true}" th:text="${cat.key.title}" />
+      </li>
+    </ul>
+
+    <span><u>Tags</u></span>
+    <br/>
+    <ul>
+
+      <li th:each="tag, iter : ${editpostdto.currentTags}">
+
+        <input type="checkbox"  th:value="${tag.key.id}" th:name="selectedTagIds"
+               th:checked="${tag.value == true}" th:text="${tag.key.title}" />
+      </li>
+    </ul>
+
+    <p><input type="submit" value="Submit" />
+      <input type="reset" value="Reset" /></p>
+  </form>
+
+</body>
+</html>

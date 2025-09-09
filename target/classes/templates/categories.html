@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - categories</title>
+</head>
+<body>
+  <h1>Blog - categories</h1>
+  <table>
+    <tr>
+      <td>
+          <a href="/">Home</a>
+      </td>
+      <td>
+          <a href="/categories">Categories</a>
+      </td>
+      <td>
+          <a href="/tags">Tags</a>
+      </td>
+      <td>
+          <a href="/newpost"New post</a>
+      </td>
+
+    </tr>
+  </table>
+<hr/>
+<table>
+
+    <thead>
+    <th>id</th>
+    <th>title</th>
+    <th>description</th>
+    <th>created on</th>
+    </thead>
+    <tr th:each="cat: ${categories}">
+      <td th:text="${cat.id}" />
+      <td th:text="${cat.title}" />
+      <td th:text="${cat.description}" />
+      <td th:text="${cat.creationDate}" />
+
+      <td>
+        <a th:href="'/categories/update/' + ${cat.id}">edit</a>
+      </td>
+      <td>
+        <form th:action="'/category/delete/' + ${cat.id}" th:method="delete">
+          <input type="submit" value="delete">
+        </form>
+      </td>
+    </tr>
+</table>
+  <a href="/categories/new">New category</a>
+</body>
+</html>

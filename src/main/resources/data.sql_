@@ -1,0 +1,9 @@
+-- INSERT INTO BLOG_POST VALUES(1,'blog post one', 'taking care of your gut health');
+-- INSERT INTO BLOG_POST VALUES(2,'this is blog post number two', 'sex life in your thirties');
+-- INSERT INTO BLOG_POST VALUES(3,'Blog post number three', 'benefits of eating kiwi');
+-- 
+-- INSERT INTO  CATEGORY VALUES (1, '2025-08-09', 1, 'Category about health', 'health');
+-- INSERT INTO  CATEGORY VALUES (1, '2025-07-09', 2, 'Category about sex', 'sex');
+-- INSERT INTO  CATEGORY VALUES (2, '2025-07-09', 3, 'Category about sex', 'sex');
+-- INSERT INTO  CATEGORY VALUES (3, '2025-06-09', 4, 'Category about nutrition', 'nutrition');
+-- INSERT INTO TAG VALUES(2,  '2024-04-10',1,'wellbeing');

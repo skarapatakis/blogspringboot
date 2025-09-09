@@ -1,0 +1,14 @@
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/BlogApplication.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/controller/BlogController.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/entity/BlogPost.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/entity/Category.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/entity/CategorySelected.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/entity/PostDto.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/entity/Tag.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/entity/TagSelected.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/repository/BlogRepository.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/repository/CategoryRepository.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/repository/TagRepository.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/service/BlogService.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/service/CategoryService.java
+/Users/stef/Documents/programming/bcn2/blog/src/main/java/com/learning/blog/service/TagService.java

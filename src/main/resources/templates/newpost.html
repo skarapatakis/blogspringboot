@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - new post</title>
+</head>
+<body>
+  <h1>Blog - new post</h1>
+  <table>
+    <tr>
+      <td>
+          <a href="/">Home</a>
+      </td>
+      <td>
+          <a href="/categories">Categories</a>
+      </td>
+      <td>
+          <a href="/tags">Tags</a>
+      </td>
+      <td>
+          <a href="/newpost"New post</a>
+      </td>
+
+    </tr>
+  </table>
+<hr/>
+<form action="#" th:action="@{/post/new}" method="post" th:object="${newpostdto}">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title" th:field="*{post.title}">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" placeholder="Content" th:field="*{post.content}"></textarea>
+
+    <h3>Categories</h3>
+    <!--- categories !-->
+    <table>
+
+        <thead>
+        <th>&nbsp;</th>
+        <th>id</th>
+        <th>title</th>
+        <th>created on</th>
+        </thead>
+        <tr th:each="entry, iter: *{currentCategories}">
+
+            <td>
+                <input type="checkbox" th:value="${entry.key.id}" th:name="selectedIds" th:id="${entry.key.id}" th:checked="${entry.value==true}" />
+            </td>
+            <td th:text="${entry.key.id}" />
+            <td th:text="${entry.key.title}" />
+            <td th:text="${entry.key.creationDate}" />
+
+            <td>
+        </tr>
+    </table>
+    <br/>
+   <h3>Tags</h3>
+    <!--- tags !-->
+    <table>
+
+        <thead>
+        <th>&nbsp;</th>
+        <th>id</th>
+        <th>title</th>
+        <th>created on</th>
+        </thead>
+        <tr th:each="entry, iter: *{currentTags}">
+            <td>
+                <input type="checkbox" th:value="${entry.key.id}" th:name="selectedTagIds" th:id="${entry.key.id}" th:checked="${entry.value==true}" />
+            </td>
+            <td th:text="${entry.key.id}" />
+            <td th:text="${entry.key.title}" />
+            <td th:text="${entry.key.creationDate}" />
+
+            <td>
+        </tr>
+    </table>
+    <br/>
+
+    <p>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - home</title>
+</head>
+<body>
+  <h1>Blog application</h1>
+  <table>
+    <tr>
+      <td>
+          <a href="/">Home</a>
+      </td>
+      <td>
+          <a href="/categories">Categories</a>
+      </td>
+      <td>
+          <a href="/tags">Tags</a>
+      </td>
+      <td>
+          <a href="/newpost"New post</a>
+      </td>
+
+    </tr>
+  </table>
+<hr/>
+<table>
+
+    <thead>
+    <th>id</th>
+    <th>title</th>
+    </thead>
+    <tr th:each="post: ${blogs}">
+      <td th:text="${post.id}" />
+      <td th:text="${post.title}" />
+
+      <td>
+        <a th:href="'/post/update/' + ${post.id}">edit</a>
+      </td>
+      <td>
+        <form th:action="'/post/delete/' + ${post.id}" th:method="delete">
+          <input type="submit" value="delete">
+        </form>
+      </td>
+    </tr>
+</table>
+<a href="/post/new">Add new post</a>
+</body>
+</html>
